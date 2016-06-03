@@ -11,7 +11,7 @@
   <link href="favicon.ico" rel="shortcut icon">
 
   <!-- css + javascript -->
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/main.css" media="all">
 
   <!--[if lt IE 9]>
@@ -28,17 +28,20 @@
       <div class="row">
 
         <div class="logo col-md-6">
-          <h5 class="logo__title">Pozvonochnikpro.ru</h5>
+          <h5 class="logo__title">Pozvonochnikpro<span>.ru</span></h5>
           <h4 class="logo__description">Информационный медицинский портал</h4>
         </div><!-- /logo -->
 
         <a href="" class="ask-question col-md-6">
-          <img src="img/ask-question.png" alt="">
-          <span class="red">Задать вопрос врачу?</span>
-          <span class="name">Зинчук Татьяна Владимировна</span>
-          <span class="post">врач-невропатолог</span>
-        </a>
+          <span class="ask-question__container">
+            <img src="img/ask-question.png" alt="">
+            <span class="title">Задать вопрос врачу?</span>
+            <span class="name">Зинчук Татьяна Владимировна</span>
+            <span class="post">врач-невропатолог</span>
+          </span>
+        </a><!-- ask-question -->
 
+        <!-- add count https://wordpress.org/support/topic/count-wp_nav_menu-items -->
         <nav class="nav col-md-12" role="navigation">
           <ul class="headnav">
             <li><a href="">Меню 1</a></li>
@@ -55,8 +58,8 @@
   <section role="main">
 
     <div class="container">
-      <div class="last-articles row">
-        <h3 class="col-md-12 last-articles__title">Последние статьи</h3>
+      <article class="last-articles row">
+        <h3 class="col-md-12 articles__title">Последние статьи</h3>
 
         <div class="col-md-4 last-articles__item">
           <a href="">
@@ -108,9 +111,9 @@
           <span class="date">18 мая 2016</span>
         </div><!-- /.col-md-4 last-articles__item -->
 
-      </div><!-- last-articles row -->
+      </article><!-- last-articles row -->
 
-      <div class="popular-articles row">
+      <article class="popular-articles row">
         <div class="popular-articles__left col-md-5">
           <div class="popular-articles__item">
             <a href="">
@@ -151,7 +154,7 @@
           </div><!-- /.popular-articles__item -->
 
         </div><!-- /.popular-articles__right col-md-7 -->
-      </div><!-- /.popular-articles row -->
+      </article><!-- /.popular-articles row -->
 
     </div><!-- container -->
   </section><!-- /section -->

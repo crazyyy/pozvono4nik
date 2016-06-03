@@ -21,13 +21,15 @@ $f-thin: 200; // 200 Light or Thin
 $f-ulight: 100; // 100 Extra Light or Ultra Light
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 1;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$width: 980px;
-$footer: 50px;
+$width: 1150px;
+$footer: 500px;
+$footersmall: 80px;
 $footer_margin: $footer - 2 * $footer;
+$footer_margin_small: $footersmall - 2 * $footersmall;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
@@ -35,14 +37,15 @@ $base-z-index: 0;
 
 // Colors
 $orange: orange;
-$red: red;
-$blue: #477dca;
-$dark-gray: #333;
+$red: #e74c3c;
+$dark-red: #c0392b;
+$blue: #2980b9;
+$dark-blue: #2c3e50;
 $medium-gray: #999;
 $light-gray: #ddd;
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: black;
 $action-color: $blue;
 
 // Border
