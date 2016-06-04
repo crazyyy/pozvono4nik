@@ -15,6 +15,8 @@
 
       <?php the_content(); ?>
 
+      <?php wpb_set_post_views(get_the_ID()); ?>
+
       <?php the_tags( __( 'Tags: ', 'wpeasy' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
       <p><?php _e( 'Categorised in: ', 'wpeasy' ); the_category(', '); // Separated by commas ?></p>
