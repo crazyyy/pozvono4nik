@@ -1,39 +1,38 @@
 <?php get_header(); ?>
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-      <h1 class="single-title inner-title"><?php the_title(); ?></h1>
-      <?php if ( has_post_thumbnail()) :?>
-        <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-          <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-        </a>
-      <?php endif; ?><!-- /post thumbnail -->
+  <div class="row">
+    <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-      <span class="date"><?php the_time('d F Y'); ?> <?php the_time('H:i'); ?></span>
-      <span class="author"><?php _e( 'Published by', 'wpeasy' ); ?> <?php the_author_posts_link(); ?></span>
-      <span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'wpeasy' ), __( '1 Comment', 'wpeasy' ), __( '% Comments', 'wpeasy' )); ?></span><!-- /post details -->
+      <div class="article__container col-md-9">
 
-      <?php the_content(); ?>
+        <?php get_template_part('article-categorized'); ?>
 
-      <?php wpb_set_post_views(get_the_ID()); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <h1 class="page-title inner-title"><?php the_title(); ?></h1>
+          <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
+          <?php the_content(); ?>
+          <?php wpb_set_post_views(get_the_ID()); ?>
+          <?php edit_post_link(); ?>
 
-      <?php the_tags( __( 'Tags: ', 'wpeasy' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+          <?php if(has_tag()) { ?>
+            <div class="article-tags">
+              <?php the_tags('', '');  ?>
+            </div><!-- /.article-tags -->
+          <?php } ?>
 
-      <p><?php _e( 'Categorised in: ', 'wpeasy' ); the_category(', '); // Separated by commas ?></p>
+        </article>
 
-      <p><?php _e( 'This post was written by ', 'wpeasy' ); the_author(); ?></p>
+        <?php comments_template(); ?>
 
-      <?php edit_post_link(); ?>
+      </div><!-- /.article__container col-md-9 -->
 
-      <?php comments_template(); ?>
+    <?php endwhile; else: // If 404 page error ?>
+      <article class="col-md-9">
+        <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
+      </article>
+    <?php endif; ?>
 
-    </article>
-  <?php endwhile; else: ?>
-    <article>
+    <?php get_sidebar(); ?>
+  </div><!-- /.row -->
 
-      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-
-    </article>
-  <?php endif; ?>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
