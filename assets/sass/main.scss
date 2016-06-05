@@ -90,7 +90,11 @@ picture {
 header {
   .logo {
     padding-top: 15px;
-    padding-left: 0 !important;
+
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
     .logo__title {
       font-family: $latobold;
       font-family: 'Lato', sans-serif;
@@ -117,7 +121,6 @@ header {
   .ask-question {
     margin-bottom: 10px;
     padding-top: 10px;
-    padding-right: 0 !important;
     .ask-question__container {
       position: relative;
 
@@ -168,12 +171,7 @@ header {
   }
   nav {
     margin-bottom: 20px;
-    padding-right: 0;
-    padding-left: 0;
     ul {
-      margin-right: -15px;
-      margin-left: -15px;
-
       border: 1px solid $dark-red;
       border-radius: $base-border-radius;
       background-color: $red;
@@ -296,6 +294,32 @@ article {
 }
 .popular-articles {
   padding-bottom: 0;
+  .popular-articles__item {
+    @extend .clearfix;
+    h2 {
+      font-size: 18px;
+
+      margin-bottom: 8px;
+
+      text-transform: uppercase;
+    }
+    .date {
+      font-size: 14px;
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      text-transform: uppercase;
+    }
+  }
+  .popular-articles__right {
+    .feature-img {
+      width: 40%;
+      float: left;
+      margin: 0 30px 30px 0;
+    }
+  }
 }
 .tags-block {
   padding: 10px;
@@ -425,14 +449,15 @@ article {
   .socials {
     li {
       display: inline-block;
-margin: 0 5px 0 0;
-&:last-child {
-  margin: 0;
-}
+
       width: 35px;
       height: 35px;
+      margin: 0 5px 0 0;
 
       text-align: center;
+      &:last-child {
+        margin: 0;
+      }
       a {
         font-size: 0;
 

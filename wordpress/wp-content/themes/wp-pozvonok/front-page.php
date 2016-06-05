@@ -22,6 +22,7 @@
   </article><!-- last-articles row -->
 
   <article class="popular-articles row">
+    <h3 class="col-md-12 articles__title">ПОПУРЯРНЫЕ СТАТЬИ</h3>
     <div class="popular-articles__left col-md-5">
       <?php $popularpost = new WP_Query( array( 'posts_per_page' => 1, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
         <div class="popular-articles__item">
