@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
 
-      <?php if ( !is_single() && !is_page() ) { ?>
+      <?php if ( (!is_single() && !is_page()) || is_page('22') )  { ?>
         <div class="tags-block col-md-12">
           <div class="tags-block__container">
             <h6>все по теме / ТЕГИ:</h6>

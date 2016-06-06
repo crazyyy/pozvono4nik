@@ -32,7 +32,7 @@
         <?php } else { ?>
           <a class="logo col-md-6 col-sm-6 col-xs-12" href="<?php echo home_url(); ?>">
         <?php } ?>
-          <h5 class="logo__title">Pozvonochnikpro<span>.ru</span></h5>
+          <img class="logo__title" src="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
           <h4 class="logo__description"><?php bloginfo('description'); ?></h4>
         <?php if ( is_front_page() && is_home() ){ ?>
           </div>

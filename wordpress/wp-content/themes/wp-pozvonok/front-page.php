@@ -1,5 +1,27 @@
 <?php /* Template Name: Home Page */ get_header(); ?>
 
+
+  <div class="top-level-cat row">
+    <div class="col-md-12">
+      <ul>
+        <?php
+          $categories = get_categories( array(
+            'orderby' => 'name',
+            'parent'  => 0
+          ) );
+
+          foreach ( $categories as $category ) {
+            printf( '<li><a href="%1$s">%2$s</a></li>',
+              esc_url( get_category_link( $category->term_id ) ),
+              esc_html( $category->name )
+            );
+          }
+        ?>
+      </ul>
+    </div>
+  </div><!-- /.top-level-cat row -->
+
+
   <article class="last-articles row">
     <h3 class="col-md-12 articles__title">Последние статьи</h3>
     <?php query_posts("showposts=6&cat=1"); ?>

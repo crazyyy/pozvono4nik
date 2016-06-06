@@ -33,6 +33,16 @@ body {
       padding-top: 20px;
     }
   }
+  &.page-template-front-page {
+    section {
+      padding: 0 0 $footer;
+    }
+    footer {
+      height: $footer;
+      margin: $footer_margin auto 0;
+      padding-top: 0;
+    }
+  }
 }
 h1,
 h2,
@@ -114,18 +124,11 @@ header {
       text-decoration: none;
     }
     .logo__title {
-      font-family: $latobold;
-      font-family: 'Lato', sans-serif;
-      font-size: 38px;
-      font-weight: bold;
-      line-height: 1;
-
+      width: 362px;
+      height: 35px;
       margin: 0 0 6px;
 
       color: $red;
-      span {
-        color: blue;
-      }
     }
     .logo__description {
       font-size: 18px;
@@ -226,7 +229,81 @@ nav {
     }
   }
 }
+.article-categorized,
+.top-level-cat {
+  padding-top: 0;
+  padding-bottom: 15px;
+  .article-categorized__title {
+    font-size: 22px;
+    font-weight: bold;
 
+    margin: 0 0 20px;
+
+    text-transform: uppercase;
+
+    color: $blue;
+  }
+  ul {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    @extend .clearfix;
+    li {
+      position: relative;
+
+      float: left;
+
+      width: 25%;
+      margin-bottom: 15px;
+      padding-left: 30px;
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        width: 20px;
+        height: 18px;
+        margin-top: -9px;
+
+        background-image: url(../img/top-level-cat.png);
+        background-repeat: no-repeat;
+
+        @extend .dblock;
+      }
+      a {
+        font-size: 18px;
+        font-weight: bold;
+
+        text-decoration: none;
+
+        color: $dark-blue;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .top-levet-cats {
+    li {
+      &:before {
+        background-image: url(../img/top-level-cat.png);
+      }
+    }
+  }
+  .categories {
+    font-size: 0;
+    ul {
+      li {
+        font-size: 18px;
+        &:before {
+          background-image: url(../img/second-level-cat.png);
+        }
+      }
+    }
+  }
+}
 section {
   padding: 0 0 $footer;
 }
@@ -696,36 +773,7 @@ article {
     color: $blue;
   }
 }
-.article-categorized {
-  .article-categorized__title {
-    font-size: 22px;
-    font-weight: bold;
 
-    margin: 0 0 20px;
-
-    text-transform: uppercase;
-  }
-  ul {
-    margin: 0 0 25px;
-    padding: 0;
-
-    @extend .clearfix;
-    li {
-      float: left;
-
-      width: 33.33%;
-      a {
-        font-size: 18px;
-        font-weight: bold;
-
-        color: $dark-blue;
-      }
-    }
-  }
-  &.article-categorized__red {
-    opacity: 1;
-  }
-}
 .footer-bottom {
   &.footer-bottom__left {
     position: relative;
@@ -986,8 +1034,9 @@ footer {
     text-align: center;
   }
   header .ask-question .ask-question__container {
-    margin: 0 auto;
     float: none;
+
+    margin: 0 auto;
   }
 }
 
