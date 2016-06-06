@@ -24,7 +24,7 @@
 
   <article class="last-articles row">
     <h3 class="col-md-12 articles__title">Последние статьи</h3>
-    <?php query_posts("showposts=6&cat=1"); ?>
+    <?php query_posts("showposts=6"); ?>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <div class="col-md-4 last-articles__item">
         <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
