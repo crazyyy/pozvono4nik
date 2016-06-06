@@ -8,22 +8,15 @@
         <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
       <?php endif; ?>
     </a><!-- /post thumbnail -->
-
     <h2 class="inner-title">
       <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
     </h2><!-- /post title -->
-
-    <span class="date"><?php the_time('j F Y'); ?> <span><?php the_time('G:i'); ?></span></span>
-    <span class="author"><?php _e( 'Published by', 'wpeasy' ); ?> <?php the_author_posts_link(); ?></span>
-    <span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'wpeasy' ), __( '1 Comment', 'wpeasy' ), __( '% Comments', 'wpeasy' )); ?></span><!-- /post details -->
-
+    <span class="date"><?php the_time('j F Y'); ?></span>
     <?php wpeExcerpt('wpeExcerpt40'); ?>
 
   </div><!-- /looper -->
   <?php endwhile; else: ?>
   <div>
-
     <h2 class="title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-
   </div><!-- /article -->
 <?php endif; ?>

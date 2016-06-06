@@ -6,17 +6,19 @@
   <div class="container">
     <div class="row">
 
-      <div class="tags-block col-md-12">
-        <div class="tags-block__container">
-          <h6>все по теме / ТЕГИ:</h6>
-          <?php wp_tag_cloud('smallest=10&largest=10&number=0&format=list'); ?>
-        </div><!-- /.tags-block__container -->
-      </div><!-- /.tags-block-container col-md-12 -->
+      <?php if ( !is_single() && !is_page() ) { ?>
+        <div class="tags-block col-md-12">
+          <div class="tags-block__container">
+            <h6>все по теме / ТЕГИ:</h6>
+            <?php wp_tag_cloud('smallest=10&largest=10&number=0&format=list'); ?>
+          </div><!-- /.tags-block__container -->
+        </div><!-- /.tags-block-container col-md-12 -->
 
-      <div class="copy-block col-md-12">
-        <h5 class="copy-block__title"><?php the_field('footer_title', 22); ?></h5>
-        <?php the_field('footer_content', 22); ?>
-      </div><!-- /.copy-block col-md-12 -->
+        <div class="copy-block col-md-12">
+          <h5 class="copy-block__title"><?php the_field('footer_title', 22); ?></h5>
+          <?php the_field('footer_content', 22); ?>
+        </div><!-- /.copy-block col-md-12 -->
+      <?php } ?>
 
       <div class="col-md-5 footer-bottom footer-bottom__left">
         <p><span>&copy; <?php echo date("Y"); ?> Портал Pozvonochnikpro.ru</span>Копирование материалов разрешено только с указанием активной ссылки на первоисточник</p>

@@ -1,10 +1,14 @@
 <?php get_header(); ?>
-  <article>
+  <div class="row">
+    <div class="article__container col-md-9">
 
-    <h1 class="search-title inner-title"><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+      <?php get_template_part('article-categorized'); ?>
 
-  </article>
-<?php get_sidebar(); ?>
+      <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
+      <?php get_template_part('loop'); ?>
+      <?php get_template_part('pagination'); ?>
+
+    </div><!-- /.article__container col-md-9 -->
+    <?php get_sidebar(); ?>
+  </div><!-- /.row -->
 <?php get_footer(); ?>

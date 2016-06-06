@@ -22,11 +22,16 @@ if (typeof jQuery == 'undefined') {
 }
 // Place any jQuery/helper plugins in here.
 $(document).ready(function() {
-  var $comments = $('.comments');
-  var commentsHeight = $comments.height();
-  var offset = $comments.offset();
-  var top = offset.top + 'px'
-  $('body').append('<div class="comment-bg"></div>');
-  $('.comment-bg').height(commentsHeight);
-  $('.comment-bg').css('top', top);
+
+  if ( $('body').hasClass('single-post') ) {
+    var $comments = $('.comments');
+    var commentsHeight = $comments.height();
+    var offset = $comments.offset();
+    var top = offset.top + 'px'
+    $('body').append('<div class="comment-bg"></div>');
+    $('.comment-bg').height(commentsHeight);
+    $('.comment-bg').css('top', top);
+  }
+
+
 });
