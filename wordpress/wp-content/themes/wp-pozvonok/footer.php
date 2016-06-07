@@ -13,12 +13,21 @@
             <?php wp_tag_cloud('smallest=10&largest=10&number=0&format=list'); ?>
           </div><!-- /.tags-block__container -->
         </div><!-- /.tags-block-container col-md-12 -->
+      <?php } ?>
 
+      <?php if ( is_page( '22' )  ) { ?>
         <div class="copy-block col-md-12">
           <h5 class="copy-block__title"><?php the_field('footer_title', 22); ?></h5>
           <?php the_field('footer_content', 22); ?>
         </div><!-- /.copy-block col-md-12 -->
+      <?php } elseif ( is_category() ) { ?>
+        <?php if (category_description( $category ) ) : ?>
+          <div class="copy-block col-md-12">
+            <?php echo category_description( $category ); ?>
+          </div><!-- /.copy-block col-md-12 -->
+        <?php endif; ?>
       <?php } ?>
+
 
       <div class="col-md-5 footer-bottom footer-bottom__left">
         <p><span>&copy; <?php echo date("Y"); ?> Портал Pozvonochnikpro.ru</span>Копирование материалов разрешено только с указанием активной ссылки на первоисточник</p>

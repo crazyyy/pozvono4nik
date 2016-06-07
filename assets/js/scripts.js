@@ -33,5 +33,9 @@ $(document).ready(function() {
     $('.comment-bg').css('top', top);
   }
 
+  if ( $('.tags-block__container').children('.wp-tag-cloud') == false  ) {
+    $('.tags-block__container').css('display', 'none');
+  }
+
 
 });

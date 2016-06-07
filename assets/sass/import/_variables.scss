@@ -26,10 +26,10 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $width: 1180px;
-$footer: 500px;
-$footersmall: 80px;
-$footer_margin: $footer - 2 * $footer;
-$footer_margin_small: $footersmall - 2 * $footersmall;
+$footer: auto;
+$footersmall: auto;
+$footer_margin: 0;
+$footer_margin_small: 0;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
