@@ -1103,3 +1103,47 @@ footer {
 
 @import 'base64';
 @import 'import/print';
+
+article {
+  &.type-page #DDWidgetDoctorList ul li:before,
+  &.type-post #DDWidgetDoctorList ul li:before {
+    display: none !important;
+  }
+}
+
+.testme_answer_block {
+  label {
+    display: inline;
+
+    color: #2980b9;
+  }
+}
+
+@media (max-width: 745px) {
+  table {
+    display: block;
+
+    border: 0 !important;
+  }
+  tbody {
+    font-size: 80%;
+
+    display: block;
+
+    border: 0;
+  }
+}
+@media (max-width: 580px) {
+  tbody {
+    font-size: 70%;
+  }
+}
+@media (max-width: 520px) {
+  tbody {
+    font-size: 60%;
+  }
+}@media (max-width: 450px) {
+  tbody {
+    font-size: 55%;
+  }
+}
